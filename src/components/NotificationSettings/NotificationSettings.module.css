@@ -1,0 +1,168 @@
+.notificationSettings {
+  background: var(--background-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 12px var(--shadow-medium);
+  margin-bottom: var(--spacing-lg);
+}
+
+.settingsTitle {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.settingsGrid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.settingItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--background-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.settingLabel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.settingTitle {
+  font-weight: var(--font-weight-medium);
+  color: var(--text-dark);
+  font-size: var(--font-size-base);
+}
+
+.settingDescription {
+  font-size: var(--font-size-small);
+  color: var(--text-medium);
+  line-height: 1.4;
+}
+
+.switch {
+  position: relative;
+  width: 50px;
+  height: 24px;
+  background: var(--border-medium);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color var(--transition-medium);
+}
+
+.switch.active {
+  background: var(--primary-blue);
+}
+
+.switchHandle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform var(--transition-medium);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.switch.active .switchHandle {
+  transform: translateX(26px);
+}
+
+.numberInput, .timeInput {
+  width: 80px;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-small);
+  text-align: center;
+}
+
+.timeInput {
+  width: 100px;
+}
+
+.permissionWarning {
+  background: linear-gradient(135deg, #FEF3CD 0%, #FDE68A 100%);
+  border: 1px solid #F59E0B;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.permissionText {
+  color: #92400E;
+  font-size: var(--font-size-small);
+  flex: 1;
+}
+
+.permissionButton {
+  background: #F59E0B;
+  color: white;
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: background-color var(--transition-medium);
+}
+
+.permissionButton:hover {
+  background: #D97706;
+}
+
+.testButton {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+
+.testButton:hover {
+  background: var(--primary-blue-dark);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .notificationSettings {
+    padding: var(--spacing-lg);
+  }
+  
+  .settingItem {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-md);
+  }
+  
+  .settingLabel {
+    align-items: flex-start;
+  }
+  
+  .switch, .numberInput, .timeInput {
+    align-self: flex-end;
+  }
+}

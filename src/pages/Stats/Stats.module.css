@@ -1,0 +1,6 @@
+.statsPage {
+  flex: 1;
+  background: var(--background);
+  min-height: 100vh;
+  padding-bottom: 100px; /* Space for bottom navigation */
+}

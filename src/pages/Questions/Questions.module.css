@@ -1,0 +1,340 @@
+.questionsPage {
+  flex: 1;
+  padding: var(--spacing-md);
+  padding-bottom: 100px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .questionsPage {
+    padding: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .questionsPage {
+    max-width: 1200px;
+    padding: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .questionsPage > * {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xl);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-dark);
+}
+
+.titleIcon {
+  color: var(--primary-blue);
+}
+
+.searchContainer {
+  position: relative;
+  margin-bottom: var(--spacing-lg);
+}
+
+.searchInput {
+  padding-left: 3.5rem !important;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  z-index: 1;
+}
+
+.addButton {
+  position: fixed;
+  bottom: 100px;
+  right: var(--spacing-md);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--shadow-medium);
+  transition: all var(--transition-medium);
+  z-index: 999;
+}
+
+.addButton:hover {
+  background: var(--primary-blue-dark);
+  transform: scale(1.1);
+}
+
+.questionsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.questionCard {
+  background: var(--background-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 2px 8px var(--shadow-light);
+  transition: all var(--transition-medium);
+}
+
+.questionCard:hover {
+  box-shadow: 0 4px 12px var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+.questionCard.resolved {
+  opacity: 0.7;
+  border-color: var(--accent-green);
+}
+
+.questionHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  .questionHeader {
+    gap: var(--spacing-md);
+  }
+}
+
+.statusButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-medium);
+  border-radius: var(--radius-full);
+  width: 32px;
+  height: 32px;
+}
+
+.statusButton:hover {
+  background: rgba(74, 144, 226, 0.1);
+  transform: scale(1.1);
+}
+
+.statusIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.statusIcon.resolved {
+  color: var(--accent-green);
+}
+
+.statusIcon.pending {
+  color: var(--text-light);
+}
+
+.noteEditor {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--background-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.noteTextarea {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  resize: vertical;
+  margin-bottom: var(--spacing-sm);
+}
+
+.noteTextarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.noteActions {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+}
+
+.questionContent {
+  flex: 1;
+}
+
+.deleteButton {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error-red);
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-medium);
+  flex-shrink: 0;
+}
+
+.deleteButton:hover {
+  background: rgba(239, 68, 68, 0.2);
+  transform: scale(1.1);
+}
+
+.deleteButton:active {
+  background: var(--error-red);
+  color: white;
+  transform: scale(0.95);
+}
+
+.questionText {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+}
+
+.questionMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.categoryTag {
+  background: rgba(74, 144, 226, 0.1);
+  color: var(--primary-blue);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+}
+
+.questionDate {
+  font-size: var(--font-size-small);
+  color: var(--text-light);
+}
+
+.questionActions {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.actionButton {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--border-light);
+  background: var(--background-white);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.actionButton:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.actionButton.resolve {
+  background: var(--accent-green);
+  color: white;
+  border-color: var(--accent-green);
+}
+
+.actionButton.resolve:hover {
+  background: #4CAE4C;
+}
+
+.notes {
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: var(--background-light);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-small);
+  color: var(--text-medium);
+  line-height: 1.4;
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--text-light);
+}
+
+.emptyIcon {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-light);
+}
+
+@media (min-width: 768px) {
+  .questionsPage {
+    padding: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .addButton {
+    position: static;
+    width: auto;
+    height: auto;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .questionCard {
+    padding: var(--spacing-lg);
+  }
+
+  .searchContainer,
+  .questionsList {
+    width: 100%;
+    max-width: 800px;
+  }
+}

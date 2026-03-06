@@ -1,0 +1,412 @@
+.homePage {
+  flex: 1;
+  padding: var(--spacing-md);
+  padding-bottom: 120px; /* More space for improved bottom nav on mobile */
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: left;
+  margin-bottom: var(--spacing-xl);
+  width: 100%;
+  margin-left: 0;
+}
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+.greetingSection {
+  margin-bottom: var(--spacing-md);
+  flex: 0 0 auto;
+}
+
+.greeting {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-sm);
+}
+
+.greetingEmoji {
+  font-size: 1.5em;
+}
+
+.dateSection {
+  margin-top: var(--spacing-sm);
+  text-align: left;
+}
+
+.motivationalSection {
+  margin-top: 0;
+  margin-left: 0;
+  flex: 1;
+  max-width: 600px;
+}
+
+.timerSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.date {
+  font-size: var(--font-size-base);
+  color: var(--text-medium);
+  font-weight: var(--font-weight-normal);
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.titleIcon {
+  color: var(--primary-blue);
+}
+
+.subtitle {
+  font-size: var(--font-size-base);
+  color: var(--text-medium);
+}
+
+.keepPushing {
+  background: linear-gradient(135deg, #E8F4F8 0%, #F0F8FF 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin: var(--spacing-lg) auto;
+  text-align: center;
+  border: 1px solid rgba(74, 144, 226, 0.2);
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  position: relative;
+  overflow: hidden;
+  max-width: 500px;
+  width: 100%;
+}
+
+.keepPushing:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.15);
+}
+
+.keepPushing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(74, 144, 226, 0.5), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.keepPushingText {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.progressInfo {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.progressText {
+  font-size: var(--font-size-small);
+  color: var(--text-medium);
+  font-style: italic;
+}
+
+.encouragementIcon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.moodButton {
+  background: var(--background-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  width: 100%;
+  max-width: 500px;
+  margin: var(--spacing-lg) auto 0;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+}
+
+.moodButton:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 4px 12px var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+.contenidoBotonAnimo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.textoBotonAnimo {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-dark);
+}
+
+.statsSection {
+  margin-top: var(--spacing-md);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.statsButton {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  display: block;
+}
+
+.statsButton:hover {
+  background: var(--primary-blue-dark);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+  transform: translateY(-2px);
+}
+
+.statsButtonContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.statsButtonText {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+}
+
+.motivationalSectionMobile {
+  display: none; /* Oculto por defecto, solo se muestra en móvil */
+}
+
+@media (min-width: 768px) {
+  .homePage {
+    padding: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    max-width: 1000px;
+  }
+  
+  .greeting {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .keepPushing {
+    padding: var(--spacing-xl);
+    max-width: 500px;
+    margin: var(--spacing-xl) auto;
+  }
+  
+  .keepPushingText {
+    font-size: var(--font-size-xl);
+  }
+
+  .progressText {
+    font-size: var(--font-size-base);
+  }
+  
+  .keepPushingText {
+    font-size: var(--font-size-xl);
+  }
+
+  .moodButton {
+    max-width: 500px;
+    margin: var(--spacing-xl) auto 0;
+  }
+  
+  .statsSection {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .statsButton {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homePage {
+    max-width: 1200px;
+    padding: var(--spacing-2xl) var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: calc(100vh - 64px);
+  }
+
+  .header {
+    margin-bottom: var(--spacing-2xl);
+    text-align: left;
+    width: 100%;
+  }
+
+  .greetingSection {
+    text-align: left;
+  }
+
+  .greeting {
+    font-size: 2.5rem;
+    justify-content: flex-start;
+  }
+
+  .title {
+    font-size: 3.5rem;
+    justify-content: flex-start;
+  }
+
+  .keepPushing {
+    max-width: 600px;
+    margin: var(--spacing-xl) auto;
+    text-align: center;
+  }
+
+  .moodButton {
+    max-width: 500px;
+    margin: var(--spacing-xl) auto 0;
+  }
+  
+  .statsSection {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .statsButton {
+    max-width: 400px;
+  }
+
+  .timerSection {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Mobile-specific layout (≤640px) */
+@media (max-width: 640px) {
+  .homePage {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .header {
+    order: 1;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .topSection {
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .greetingSection {
+    order: 1;
+    margin-bottom: var(--spacing-md);
+    width: 100%;
+  }
+
+  /* Esconder el motivationalSection del header en móvil */
+  .topSection .motivationalSection {
+    display: none;
+  }
+
+  .timerSection {
+    order: 2;
+    margin: var(--spacing-md) 0;
+  }
+
+  .statsSection {
+    order: 3;
+    margin: var(--spacing-md) 0;
+  }
+
+  /* Mostrar el motivationalSectionMobile después del statsSection */
+  .motivationalSectionMobile {
+    order: 4;
+    display: block;
+    margin-top: var(--spacing-md);
+    margin-left: 0;
+    max-width: none;
+    width: 100%;
+  }
+
+  .keepPushing {
+    order: 5;
+    margin: var(--spacing-md) auto;
+    max-width: none;
+    padding: var(--spacing-lg);
+  }
+
+  .moodButton {
+    order: 6;
+    margin: var(--spacing-lg) auto 0;
+    max-width: none;
+  }
+
+  /* Ensure proper spacing and full width on mobile */
+  .homePage > * {
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  /* Adjust button styles for mobile */
+  .statsButton {
+    max-width: none;
+    width: 100%;
+  }
+
+  .moodButton {
+    width: 100%;
+  }
+
+  .keepPushing {
+    width: 100%;
+    max-width: none;
+  }
+}

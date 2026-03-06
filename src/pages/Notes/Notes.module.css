@@ -1,0 +1,443 @@
+.notesPage {
+  flex: 1;
+  padding: var(--spacing-md);
+  padding-bottom: 100px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .notesPage {
+    padding: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .notesPage {
+    max-width: 1200px;
+    padding: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .notesPage > * {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xl);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-dark);
+}
+
+.titleIcon {
+  color: var(--primary-blue);
+}
+
+.searchContainer {
+  margin-bottom: var(--spacing-lg);
+}
+
+.filterContainer {
+  display: flex;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-md);
+}
+
+.filterButton {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--border-light);
+  background: var(--background-white);
+  color: var(--text-medium);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+  transition: all var(--transition-medium);
+}
+
+.filterButton:hover {
+  background: var(--background-light);
+  border-color: var(--primary-blue);
+}
+
+.filterButton.active {
+  background: var(--primary-blue);
+  color: white;
+  border-color: var(--primary-blue);
+}
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  width: 100%;
+  padding: var(--spacing-md);
+  padding-left: 3rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-medium);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--spacing-md);
+  color: var(--text-light);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.addButton {
+  position: fixed;
+  bottom: 100px;
+  right: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-md);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--shadow-medium);
+  transition: all var(--transition-medium);
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 999;
+}
+
+.addButton:hover {
+  background: var(--primary-blue-dark);
+  transform: scale(1.05);
+}
+
+.addButtonText {
+  opacity: 0;
+  width: 0;
+  transition: all var(--transition-medium);
+}
+
+@media (min-width: 768px) {
+  .addButton {
+    width: auto;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    position: static;
+    align-self: flex-start;
+  }
+  
+  .addButtonText {
+    opacity: 1;
+    width: auto;
+    margin-left: var(--spacing-xs);
+  }
+  
+  .addButton:hover {
+    transform: translateY(-2px);
+  }
+  
+  .header {
+    align-items: center;
+  }
+}
+
+.notesList {
+  display: grid;
+  gap: var(--spacing-md);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .notesList {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1200px) {
+  .notesList {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+  }
+}
+
+.noteCard {
+  background: var(--background-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 2px 8px var(--shadow-light);
+  transition: all var(--transition-medium);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.noteCard:hover {
+  box-shadow: 0 4px 12px var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+.noteHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-sm);
+  gap: var(--spacing-sm);
+}
+
+.noteTitle {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-dark);
+  line-height: 1.3;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: color var(--transition-medium);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+}
+
+.noteTitle:hover {
+  color: var(--primary-blue);
+  background: rgba(74, 144, 226, 0.05);
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-medium);
+}
+
+.completeButton {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--success-green);
+}
+
+.completeButton:hover {
+  background: rgba(34, 197, 94, 0.2);
+  transform: scale(1.1);
+}
+
+.completeButton:active {
+  transform: scale(0.95);
+}
+
+.completeButton.completed {
+  background: var(--success-green);
+  color: white;
+}
+
+.deleteButton {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error-red);
+}
+
+.deleteButton:hover {
+  background: rgba(239, 68, 68, 0.2);
+  transform: scale(1.1);
+}
+
+.deleteButton:active {
+  background: var(--error-red);
+  color: white;
+  transform: scale(0.95);
+}
+
+.noteCompleted {
+  opacity: 0.7;
+  border-left: 4px solid var(--success-green);
+}
+
+.noteCompleted .noteTitle {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+.noteCompleted .noteContent {
+  color: var(--text-light);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--text-light);
+  grid-column: 1 / -1;
+}
+
+.emptyIcon {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-light);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--spacing-md);
+}
+
+.modalContent {
+  background: var(--background-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  width: 100%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-lg);
+}
+
+.modalTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-dark);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-medium);
+}
+
+.closeButton:hover {
+  color: var(--text-dark);
+  background: var(--background-light);
+}
+
+.formGroup {
+  margin-bottom: var(--spacing-md);
+}
+
+.label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-dark);
+}
+
+.modalActions {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+  margin-top: var(--spacing-lg);
+}
+
+.noteContent {
+  color: var(--text-medium);
+  line-height: 1.4;
+  margin-bottom: var(--spacing-sm);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-medium);
+}
+
+.noteContent:hover {
+  background: rgba(74, 144, 226, 0.03);
+}
+
+@media (min-width: 640px) {
+  .notesList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .notesPage {
+    padding: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .addButton {
+    position: static;
+    width: auto;
+    height: auto;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .modalContent {
+    padding: var(--spacing-xl);
+  }
+
+  .searchContainer,
+  .notesList {
+    width: 100%;
+    max-width: 900px;
+  }
+}

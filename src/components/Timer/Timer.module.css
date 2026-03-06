@@ -1,0 +1,191 @@
+.timerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+}
+
+.circularTimer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.circularProgress {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.progressBackground {
+  fill: none;
+  stroke: var(--border-light);
+  stroke-width: 8;
+}
+
+.progressBar {
+  fill: none;
+  stroke: var(--accent-teal);
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset var(--transition-medium);
+}
+
+.timerDisplay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.timeText {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.timerControls {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.controlButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  font-size: 1.2rem;
+}
+
+.playButton {
+  background-color: var(--accent-green);
+  color: white;
+}
+
+.playButton:hover {
+  background-color: #4CAE4C;
+  transform: scale(1.05);
+}
+
+.pauseButton {
+  background-color: #F39C12;
+  color: white;
+}
+
+.pauseButton:hover {
+  background-color: #E67E22;
+  transform: scale(1.05);
+}
+
+.resetButton {
+  background-color: #E74C3C;
+  color: white;
+}
+
+.resetButton:hover {
+  background-color: #C0392B;
+  transform: scale(1.05);
+}
+
+.finishButton {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.finishButton:hover {
+  background-color: var(--primary-blue-dark);
+  transform: scale(1.05);
+}
+
+.statsCard {
+  background: var(--background-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: 0 2px 8px var(--shadow-light);
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  border: 1px solid var(--border-light);
+}
+
+.statsTitle {
+  font-size: var(--font-size-base);
+  color: var(--text-medium);
+  margin-bottom: var(--spacing-sm);
+}
+
+.statsValue {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-dark);
+}
+
+@media (min-width: 768px) {
+  .circularTimer {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .timeText {
+    font-size: 2.8rem;
+  }
+  
+  .controlButton {
+    width: 65px;
+    height: 65px;
+    font-size: 1.5rem;
+  }
+  
+  .statsTitle {
+    font-size: var(--font-size-large);
+  }
+  
+  .statsValue {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .timerContainer {
+    align-items: center;
+    margin: 0 auto;
+    max-width: 450px;
+  }
+  
+  .circularTimer {
+    width: 320px;
+    height: 320px;
+  }
+  
+  .timeText {
+    font-size: 3.2rem;
+  }
+  
+  .controlButton {
+    width: 70px;
+    height: 70px;
+    font-size: 1.6rem;
+  }
+  
+  .statsTitle {
+    font-size: var(--font-size-xl);
+  }
+  
+  .statsValue {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .statsCard {
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+  }
+}

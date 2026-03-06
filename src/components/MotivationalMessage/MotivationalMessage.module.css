@@ -1,0 +1,64 @@
+.motivationalCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  background: linear-gradient(135deg, #E8F4F8 0%, #D1E7DD 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid rgba(91, 192, 222, 0.2);
+}
+
+.messageContent {
+  flex: 1;
+}
+
+.messageText {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin: 0 0 0.75rem 0;
+  font-style: italic;
+}
+
+.messageAuthor {
+  font-size: 1rem;
+  color: var(--text-medium);
+  margin: 0;
+  font-weight: 600;
+}
+
+.refreshButton {
+  background: var(--background-white);
+  border: 1px solid rgba(91, 192, 222, 0.3);
+  border-radius: 8px;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--accent-teal);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(91, 192, 222, 0.2);
+}
+
+.refreshButton:hover {
+  background: rgba(91, 192, 222, 0.1);
+  transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+  .motivationalCard {
+    padding: var(--spacing-xl);
+  }
+  
+  .messageText {
+    font-size: 1.5rem;
+  }
+  
+  .messageAuthor {
+    font-size: 1.1rem;
+  }
+}
